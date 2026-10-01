@@ -119,6 +119,25 @@
       <div class="project-grid" id="projectGrid"></div>
     </section>
 
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-project></div>
+      <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button class="project-modal-close" type="button" aria-label="Cerrar" data-close-project>×</button>
+        <div class="project-modal-media">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Proyecto anterior">‹</button>
+          <img id="projectModalImage" src="" alt="Vista del proyecto">
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Siguiente vista">›</button>
+          <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+        <div class="project-modal-copy">
+          <span class="kicker" id="projectModalLabel"></span>
+          <h2 id="projectModalTitle"></h2>
+          <p id="projectModalDesc"></p>
+          <div class="project-modal-actions"><button class="btn btn-primary" id="projectContactBtn" type="button">Quiero algo así <span>↗</span></button><span class="project-counter" id="projectCounter"></span></div>
+        </div>
+      </div>
+    </div>
+
     <section class="section about" id="sobre-mi">
       <div class="about-visual reveal"><div class="about-monogram">HC</div><div class="about-ring"></div></div>
       <div class="about-copy reveal">

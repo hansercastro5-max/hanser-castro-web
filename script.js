@@ -23,20 +23,41 @@ $("#serviceGrid").innerHTML = services.map(([icon,n,title,desc]) => `
   </article>`).join("");
 
 const projects = [
-  ["Restaurante","Experiencia gastronómica","Restaurant"],
-  ["Barbería","Marca & reservas","Barber Studio"],
-  ["Gimnasio","Fitness & membresías","Performance"],
-  ["Tienda de ropa","E-commerce","Fashion Store"],
-  ["Inmobiliaria","Propiedades premium","Real Estate"],
-  ["Marca personal","Portfolio & servicios","Personal Brand"]
+  {name:"Restaurante",desc:"Experiencia gastronómica",label:"Restaurant",accent:"#8a5cff",detail:"Un sitio elegante para mostrar el menú, reservas, ubicación y promociones del restaurante.",images:["assets/projects/p1-1.svg","assets/projects/p1-2.svg","assets/projects/p1-3.svg"]},
+  {name:"Barbería",desc:"Marca & reservas",label:"Barber Studio",accent:"#37d6ff",detail:"Una web moderna para presentar servicios, precios, horarios y facilitar las reservas.",images:["assets/projects/p2-1.svg","assets/projects/p2-2.svg","assets/projects/p2-3.svg"]},
+  {name:"Gimnasio",desc:"Fitness & membresías",label:"Performance",accent:"#65e69c",detail:"Experiencia enfocada en planes, entrenamientos, membresías y captación de clientes.",images:["assets/projects/p3-1.svg","assets/projects/p3-2.svg","assets/projects/p3-3.svg"]},
+  {name:"Tienda de ropa",desc:"E-commerce",label:"Fashion Store",accent:"#ff7bb8",detail:"Catálogo visual y recorrido de compra pensado para vender productos desde cualquier dispositivo.",images:["assets/projects/p4-1.svg","assets/projects/p4-2.svg","assets/projects/p4-3.svg"]},
+  {name:"Inmobiliaria",desc:"Propiedades premium",label:"Real Estate",accent:"#f6c85f",detail:"Presentación de propiedades con fichas visuales, filtros y contacto comercial.",images:["assets/projects/p5-1.svg","assets/projects/p5-2.svg","assets/projects/p5-3.svg"]},
+  {name:"Marca personal",desc:"Portfolio & servicios",label:"Personal Brand",accent:"#8a5cff",detail:"Portfolio profesional para mostrar servicios, proyectos, experiencia y recibir clientes.",images:["assets/projects/p6-1.svg","assets/projects/p6-2.svg","assets/projects/p6-3.svg"]}
 ];
-const accents = ["#8a5cff","#37d6ff","#65e69c","#ff7bb8","#f6c85f","#8a5cff"];
-$("#projectGrid").innerHTML = projects.map(([name,desc,label],i) => `
-  <article class="project-card reveal">
-    <div class="project-bg" style="--c:${accents[i]}"></div>
-    <div class="project-mock"><div class="mock-bar"><i class="mock-dot"></i><i class="mock-dot"></i><i class="mock-dot"></i></div><div class="mock-lines"><i></i><i></i><i></i></div></div>
-    <div class="project-info"><span>${label}</span><h3>${name}</h3></div>
-  </article>`).join("");
+
+$("#projectGrid").innerHTML = projects.map((p,i) => `
+  <button class="project-card reveal" type="button" data-project="${i}" style="--c:${p.accent}" aria-label="Ver proyecto ${p.name}">
+    <div class="project-image-wrap"><img class="project-image" src="${p.images[0]}" alt="Vista previa del proyecto ${p.name}" loading="lazy"><span class="project-view">VER PROYECTO ↗</span></div>
+    <div class="project-info"><span>${p.label}</span><h3>${p.name}</h3><small>${p.desc}</small></div>
+  </button>`).join("");
+
+const projectModal=$("#projectModal"), projectImage=$("#projectModalImage"), projectTitle=$("#projectModalTitle"), projectLabel=$("#projectModalLabel"), projectDesc=$("#projectModalDesc"), projectCounter=$("#projectCounter"), galleryDots=$("#galleryDots");
+let activeProject=0, activeScreen=0;
+function renderProject(){
+  const p=projects[activeProject];
+  projectImage.src=p.images[activeScreen];
+  projectImage.alt=`Vista ${activeScreen+1} de ${p.name}`;
+  projectTitle.textContent=p.name;
+  projectLabel.textContent=`03 / PORTAFOLIO — ${p.label}`;
+  projectDesc.textContent=p.detail;
+  projectCounter.textContent=`${activeScreen+1} / ${p.images.length}`;
+  galleryDots.innerHTML=p.images.map((_,i)=>`<button type="button" class="gallery-dot ${i===activeScreen?'active':''}" data-screen="${i}" aria-label="Vista ${i+1}"></button>`).join("");
+}
+function openProject(index){activeProject=index;activeScreen=0;renderProject();projectModal.classList.add("open");projectModal.setAttribute("aria-hidden","false");document.body.classList.add("modal-open");}
+function closeProject(){projectModal.classList.remove("open");projectModal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open");}
+$$('.project-card').forEach(card=>card.addEventListener('click',()=>openProject(Number(card.dataset.project))));
+$$('[data-close-project]').forEach(el=>el.addEventListener('click',closeProject));
+$(".gallery-prev").addEventListener('click',()=>{activeScreen=(activeScreen+projects[activeProject].images.length-1)%projects[activeProject].images.length;renderProject();});
+$(".gallery-next").addEventListener('click',()=>{activeScreen=(activeScreen+1)%projects[activeProject].images.length;renderProject();});
+galleryDots.addEventListener('click',e=>{const b=e.target.closest('[data-screen]');if(b){activeScreen=Number(b.dataset.screen);renderProject();}});
+$("#projectContactBtn").addEventListener('click',()=>{closeProject();$("#contacto").scrollIntoView({behavior:"smooth"});});
+addEventListener('keydown',e=>{if(!projectModal.classList.contains('open'))return;if(e.key==='Escape')closeProject();if(e.key==='ArrowRight')$(".gallery-next").click();if(e.key==='ArrowLeft')$(".gallery-prev").click();});
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add("visible"); observer.unobserve(entry.target); }});
