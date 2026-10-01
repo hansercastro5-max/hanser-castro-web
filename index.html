@@ -180,6 +180,12 @@
   </footer>
 
   <script src="config.js"></script>
+  <script>
+    // Seguridad: si un recurso externo tarda o falla, la pantalla de carga no se queda bloqueada.
+    window.addEventListener("load", () => {
+      setTimeout(() => document.getElementById("preloader")?.classList.add("done"), 1200);
+    });
+  </script>
   <script type="module" src="script.js"></script>
 </body>
 </html>
