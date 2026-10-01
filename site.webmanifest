@@ -1,0 +1,9 @@
+{
+  "name": "Hanser Castro — Web Automation 3D",
+  "short_name": "Hanser Castro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070a",
+  "theme_color": "#07070a",
+  "icons": [{"src":"assets/favicon.svg","sizes":"any","type":"image/svg+xml"}]
+}
