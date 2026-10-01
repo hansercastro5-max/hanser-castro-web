@@ -114,29 +114,11 @@
     <section class="section portfolio" id="proyectos">
       <div class="section-head reveal">
         <div><span class="kicker">03 / PORTAFOLIO</span><h2>Proyectos que<br><em>puedo crear.</em></h2></div>
-        <p>Ejemplos de experiencias digitales que pueden adaptarse a distintos tipos de negocios.</p>
+        <p>Explora ejemplos visuales de experiencias digitales. Entra en cada proyecto para ver sus diferentes pantallas.</p>
       </div>
       <div class="project-grid" id="projectGrid"></div>
+      <div class="project-hint"><span>CLICK EN UN PROYECTO</span><i></i><span>NAVEGA ENTRE PANTALLAS</span></div>
     </section>
-
-    <div class="project-modal" id="projectModal" aria-hidden="true">
-      <div class="project-modal-backdrop" data-close-project></div>
-      <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
-        <button class="project-modal-close" type="button" aria-label="Cerrar" data-close-project>×</button>
-        <div class="project-modal-media">
-          <button class="gallery-arrow gallery-prev" type="button" aria-label="Proyecto anterior">‹</button>
-          <img id="projectModalImage" src="" alt="Vista del proyecto">
-          <button class="gallery-arrow gallery-next" type="button" aria-label="Siguiente vista">›</button>
-          <div class="gallery-dots" id="galleryDots"></div>
-        </div>
-        <div class="project-modal-copy">
-          <span class="kicker" id="projectModalLabel"></span>
-          <h2 id="projectModalTitle"></h2>
-          <p id="projectModalDesc"></p>
-          <div class="project-modal-actions"><button class="btn btn-primary" id="projectContactBtn" type="button">Quiero algo así <span>↗</span></button><span class="project-counter" id="projectCounter"></span></div>
-        </div>
-      </div>
-    </div>
 
     <section class="section about" id="sobre-mi">
       <div class="about-visual reveal"><div class="about-monogram">HC</div><div class="about-ring"></div></div>
@@ -199,12 +181,22 @@
   </footer>
 
   <script src="config.js"></script>
-  <script>
-    // Seguridad: si un recurso externo tarda o falla, la pantalla de carga no se queda bloqueada.
-    window.addEventListener("load", () => {
-      setTimeout(() => document.getElementById("preloader")?.classList.add("done"), 1200);
-    });
-  </script>
   <script type="module" src="script.js"></script>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-project-close></div>
+      <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button class="project-modal-close" id="projectModalClose" aria-label="Cerrar">×</button>
+        <div class="project-modal-media">
+          <img id="projectModalImage" src="" alt="Vista del proyecto">
+          <button class="project-nav project-prev" id="projectPrev" aria-label="Anterior">‹</button>
+          <button class="project-nav project-next" id="projectNext" aria-label="Siguiente">›</button>
+        </div>
+        <div class="project-modal-info">
+          <div><span class="project-modal-kicker" id="projectModalKicker"></span><h3 id="projectModalTitle"></h3><p id="projectModalDesc"></p></div>
+          <div class="project-counter"><span id="projectCounter">01 / 03</span><div class="project-dots" id="projectDots"></div></div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
