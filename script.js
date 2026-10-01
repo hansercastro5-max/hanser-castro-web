@@ -1,5 +1,4 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/controls/OrbitControls.js";
 
 const config = window.SITE_CONFIG || {};
 const $ = (s, p=document) => p.querySelector(s);
@@ -24,40 +23,20 @@ $("#serviceGrid").innerHTML = services.map(([icon,n,title,desc]) => `
   </article>`).join("");
 
 const projects = [
-  {name:"Restaurante",desc:"Experiencia gastronómica & reservas",label:"Restaurant",accent:"#8a5cff",screens:["p1-1.svg","p1-2.svg","p1-3.svg"]},
-  {name:"Barbería",desc:"Marca, agenda & reservas",label:"Barber Studio",accent:"#37d6ff",screens:["p2-1.svg","p2-2.svg","p2-3.svg"]},
-  {name:"Gimnasio",desc:"Membresías, clases & progreso",label:"Performance",accent:"#65e69c",screens:["p3-1.svg","p3-2.svg","p3-3.svg"]},
-  {name:"Tienda de ropa",desc:"E-commerce & catálogo digital",label:"Fashion Store",accent:"#ff7bb8",screens:["p4-1.svg","p4-2.svg","p4-3.svg"]},
-  {name:"Inmobiliaria",desc:"Propiedades premium & contacto",label:"Real Estate",accent:"#f6c85f",screens:["p5-1.svg","p5-2.svg","p5-3.svg"]},
-  {name:"Marca personal",desc:"Portfolio profesional & servicios",label:"Personal Brand",accent:"#8a5cff",screens:["p6-1.svg","p6-2.svg","p6-3.svg"]}
+  ["Restaurante","Experiencia gastronómica","Restaurant"],
+  ["Barbería","Marca & reservas","Barber Studio"],
+  ["Gimnasio","Fitness & membresías","Performance"],
+  ["Tienda de ropa","E-commerce","Fashion Store"],
+  ["Inmobiliaria","Propiedades premium","Real Estate"],
+  ["Marca personal","Portfolio & servicios","Personal Brand"]
 ];
-const projectGrid = $("#projectGrid");
-projectGrid.innerHTML = projects.map((p,i) => `
-  <article class="project-card reveal" data-project="${i}" style="--c:${p.accent}">
-    <div class="project-image-wrap"><img class="project-image" src="assets/projects/${p.screens[0]}" alt="Vista previa del proyecto ${p.name}" loading="lazy"></div>
-    <div class="project-top"><span class="project-badge">${p.label}</span><span class="project-arrow">↗</span></div>
-    <div class="project-info"><span>${String(i+1).padStart(2,"0")} / PROYECTO</span><h3>${p.name}</h3><p>${p.desc}</p></div>
-    <span class="project-view">VER PROYECTO →</span>
+const accents = ["#8a5cff","#37d6ff","#65e69c","#ff7bb8","#f6c85f","#8a5cff"];
+$("#projectGrid").innerHTML = projects.map(([name,desc,label],i) => `
+  <article class="project-card reveal">
+    <div class="project-bg" style="--c:${accents[i]}"></div>
+    <div class="project-mock"><div class="mock-bar"><i class="mock-dot"></i><i class="mock-dot"></i><i class="mock-dot"></i></div><div class="mock-lines"><i></i><i></i><i></i></div></div>
+    <div class="project-info"><span>${label}</span><h3>${name}</h3></div>
   </article>`).join("");
-
-const modal=$("#projectModal"), modalImage=$("#projectModalImage"), modalTitle=$("#projectModalTitle"), modalDesc=$("#projectModalDesc"), modalKicker=$("#projectModalKicker"), counter=$("#projectCounter"), dots=$("#projectDots");
-let activeProject=0, activeScreen=0;
-function renderProject(){
-  const p=projects[activeProject];
-  modalImage.src=`assets/projects/${p.screens[activeScreen]}`;
-  modalImage.alt=`${p.name} — pantalla ${activeScreen+1}`;
-  modalTitle.textContent=p.name; modalDesc.textContent=p.desc; modalKicker.textContent=`${p.label} · EXPERIENCIA DIGITAL`;
-  counter.textContent=`${String(activeScreen+1).padStart(2,"0")} / ${String(p.screens.length).padStart(2,"0")}`;
-  dots.innerHTML=p.screens.map((_,i)=>`<button class="project-dot ${i===activeScreen?"active":""}" data-screen="${i}" aria-label="Pantalla ${i+1}"></button>`).join("");
-  dots.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{activeScreen=Number(b.dataset.screen);renderProject();}));
-}
-function openProject(i){activeProject=i;activeScreen=0;renderProject();modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
-function closeProject(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";}
-projectGrid.addEventListener("click",e=>{const card=e.target.closest(".project-card");if(card)openProject(Number(card.dataset.project));});
-$("#projectModalClose").addEventListener("click",closeProject);$("[data-project-close]").addEventListener("click",closeProject);
-$("#projectPrev").addEventListener("click",()=>{activeScreen=(activeScreen+projects[activeProject].screens.length-1)%projects[activeProject].screens.length;renderProject();});
-$("#projectNext").addEventListener("click",()=>{activeScreen=(activeScreen+1)%projects[activeProject].screens.length;renderProject();});
-addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.key==="Escape")closeProject();if(e.key==="ArrowLeft")$("#projectPrev").click();if(e.key==="ArrowRight")$("#projectNext").click();});
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add("visible"); observer.unobserve(entry.target); }});
