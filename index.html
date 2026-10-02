@@ -8,6 +8,14 @@
   <meta property="og:title" content="Hanser Castro | Web • Automation • 3D">
   <meta property="og:description" content="Creo páginas web modernas, automatizaciones y experiencias digitales 3D.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hanser-castro-web.vercel.app/">
+  <meta property="og:image" content="https://hanser-castro-web.vercel.app/assets/og-image.png">
+  <link rel="canonical" href="https://hanser-castro-web.vercel.app/">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hanser Castro | Web • Automation • 3D">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.preloader{display:none!important}</style></noscript>
   <title>Hanser Castro | Web • Automation • 3D</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
@@ -15,10 +23,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Hanser Castro","url":"https://hanser-castro-web.vercel.app/","email":"hansercastro5@gmail.com","sameAs":["https://www.instagram.com/han.ser__hr/"],"areaServed":"Ecuador","description":"Diseño web, landing pages, tiendas online y automatizaciones para negocios."}</script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="lgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9b72ff"/><stop offset="1" stop-color="#37d6ff"/></linearGradient></defs></svg>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <div id="preloader" class="preloader" aria-label="Cargando">
-    <div class="preloader-logo">HC</div>
+    <div class="preloader-logo"><svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="HC"><g class="lg-ring lg-back"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 1 61 32" fill="none" stroke="#cfe9ff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></g></g><circle cx="32" cy="32" r="20" fill="url(#lgg)"/><path class="lg-h" pathLength="1" d="M25 23v18M39 23v18M25 32h14" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/><g class="lg-ring lg-front"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 0 61 32" fill="none" stroke="#e9f6ff" stroke-width="2.6" stroke-linecap="round"/><circle cx="61" cy="32" r="3.4" fill="#37d6ff"/></g></g></svg></div>
     <div class="preloader-name">HANSER CASTRO</div>
   </div>
 
@@ -27,15 +38,16 @@
 
   <header class="navbar" id="navbar">
     <a class="brand" href="#inicio" aria-label="Hanser Castro inicio">
-      <span class="brand-mark">HC</span>
+      <span class="brand-mark"><svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="HC"><g class="lg-ring lg-back"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 1 61 32" fill="none" stroke="#cfe9ff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></g></g><circle cx="32" cy="32" r="20" fill="url(#lgg)"/><path class="lg-h" pathLength="1" d="M25 23v18M39 23v18M25 32h14" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/><g class="lg-ring lg-front"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 0 61 32" fill="none" stroke="#e9f6ff" stroke-width="2.6" stroke-linecap="round"/><circle cx="61" cy="32" r="3.4" fill="#37d6ff"/></g></g></svg></span>
       <span class="brand-text">HANSER CASTRO<small>WEB • AUTOMATION • 3D</small></span>
     </a>
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
+      
       <a href="#automatizaciones">Automatizaciones</a>
-      <a href="#sobre-mi">Sobre mí</a>
+      
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="nav-cta magnetic" href="#contacto">Empezar proyecto <span>↗</span></a>
@@ -44,21 +56,21 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a>
-    <a href="#automatizaciones">Automatizaciones</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Contacto</a>
+    <a href="#automatizaciones">Automatizaciones</a><a href="#contacto">Contacto</a>
   </div>
 
-  <main>
+  <main id="main">
     <section class="hero section" id="inicio">
       <div class="hero-copy reveal">
         <div class="eyebrow"><span class="status-dot"></span> SOLUCIONES DIGITALES PARA NEGOCIOS</div>
-        <h1>CONVIERTO IDEAS EN <em>EXPERIENCIAS DIGITALES.</em></h1>
-        <p>Diseño páginas web modernas, automatizaciones inteligentes y experiencias digitales que ayudan a los negocios a crecer.</p>
+        <h1>TU NEGOCIO, CON UNA WEB QUE <em>TRAE CLIENTES.</em></h1>
+        <p>Diseño páginas rápidas y profesionales, y automatizo tus formularios y avisos para que respondas a tus clientes sin perder tiempo. Entrega en 7 a 14 días.</p>
         <div class="hero-actions">
           <a class="btn btn-primary magnetic" href="#contacto">Crear mi página web <span>↗</span></a>
-          <a class="btn btn-ghost" href="#servicios">Ver servicios <span>↓</span></a>
+          <a class="btn btn-ghost" href="#proyectos">Ver proyectos <span>↓</span></a>
         </div>
         <div class="hero-meta">
-          <span>WEB DEVELOPMENT</span><i></i><span>AUTOMATION</span><i></i><span>3D EXPERIENCES</span>
+          <span>PÁGINAS WEB</span><i></i><span>AUTOMATIZACIÓN</span><i></i><span>EXPERIENCIAS 3D</span>
         </div>
       </div>
       <div class="hero-visual" id="hero3d" aria-label="Animación 3D interactiva"></div>
@@ -113,68 +125,57 @@
 
     <section class="section portfolio" id="proyectos">
       <div class="section-head reveal">
-        <div><span class="kicker">03 / PORTAFOLIO</span><h2>Proyectos que<br><em>puedo crear.</em></h2></div>
-        <p>Ejemplos de experiencias digitales que pueden adaptarse a distintos tipos de negocios.</p>
+        <div><span class="kicker">03 / PORTAFOLIO</span><h2>Plantillas que<br><em>puedo crear.</em></h2></div>
+        <p>Toca cualquier plantilla para entrar y verla como la vería tu cliente. Todas se adaptan a tu marca.</p>
       </div>
       <div class="project-grid" id="projectGrid"></div>
     </section>
 
-    <section class="section about" id="sobre-mi">
-      <div class="about-visual reveal"><div class="about-monogram">HC</div><div class="about-ring"></div></div>
-      <div class="about-copy reveal">
-        <span class="kicker">04 / SOBRE MÍ</span>
-        <h2>Hola, soy <em>Hanser.</em></h2>
-        <p>Soy Hanser Castro y creo soluciones digitales para negocios que quieren tener una presencia online moderna, profesional y funcional.</p>
-        <div class="about-tags"><span>DESARROLLO WEB</span><span>AUTOMATIZACIÓN</span><span>DISEÑO DIGITAL</span><span>3D WEB</span></div>
+
+
+    <section class="section statement" id="presupuesto">
+      <div class="statement-inner reveal">
+        <span class="kicker">PRESUPUESTO</span>
+        <h2>NOS ADAPTAMOS<br><span>A TU PRESUPUESTO.</span></h2>
+        <p>Cada negocio es distinto. Cuéntame qué necesitas y cuánto quieres invertir, y te propongo la mejor opción dentro de ese valor.</p>
+        <a class="btn btn-primary magnetic" href="#contacto" style="margin-top:26px">Cuéntame tu presupuesto <span>↗</span></a>
       </div>
     </section>
 
-    <section class="section process">
-      <div class="section-head reveal"><div><span class="kicker">05 / PROCESO</span><h2>De la idea<br><em>al lanzamiento.</em></h2></div></div>
-      <div class="process-grid">
-        <article class="process-step reveal"><span>01</span><h3>IDEA</h3><p>Entendemos lo que necesita tu negocio y definimos el objetivo.</p></article>
-        <article class="process-step reveal"><span>02</span><h3>DISEÑO</h3><p>Creamos una propuesta visual moderna y alineada a tu marca.</p></article>
-        <article class="process-step reveal"><span>03</span><h3>DESARROLLO</h3><p>Convertimos el diseño en una experiencia rápida y funcional.</p></article>
-        <article class="process-step reveal"><span>04</span><h3>LANZAMIENTO</h3><p>Publicamos el proyecto y dejamos todo preparado para crecer.</p></article>
-      </div>
-    </section>
-
-    <section class="section tech">
-      <div class="tech-inner reveal">
-        <span class="kicker">06 / TECNOLOGÍA</span>
-        <h2>Construido con herramientas<br><em>modernas.</em></h2>
-        <div class="tech-list"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>REACT</span><span>THREE.JS</span><span>APIs</span><span>AUTOMATION</span></div>
+    <section class="section faq" id="preguntas">
+      <div class="section-head reveal"><div><span class="kicker">PREGUNTAS FRECUENTES</span><h2>Lo que suelen<br><em>preguntarme.</em></h2></div></div>
+      <div class="faq-list reveal"><details class="faq-item"><summary>¿Cuánto cuesta?</summary><p>Depende de lo que necesites. Me adapto a tu presupuesto y te propongo lo que mejor funcione dentro de él, sin compromiso.</p></details><details class="faq-item"><summary>¿Cuánto tarda mi página?</summary><p>Una landing page toma de 5 a 7 días y una web completa de 10 a 14 días, desde que me envías tu contenido (textos, logo y fotos).</p></details><details class="faq-item"><summary>¿Cómo se paga?</summary><p>Se paga el 50% para empezar y el 50% restante al entregar. Acepto transferencia bancaria.</p></details><details class="faq-item"><summary>¿Incluye dominio y hosting?</summary><p>Tu página se publica en línea sin costo extra de hosting. Si quieres un dominio propio (.com o .ec), lo compras tú y yo me encargo de conectarlo.</p></details><details class="faq-item"><summary>¿Podré editar mi página después?</summary><p>Si, te enseño a hacer cambios simples. Para cambios más grandes, me escribes y los hago.</p></details><details class="faq-item"><summary>¿Qué necesito para empezar?</summary><p>Solo contarme de tu negocio en el formulario. Si todavía no tienes logo o textos, te ayudo a definirlos.</p></details><details class="faq-item"><summary>¿Hay soporte después de publicar?</summary><p>Sí. Durante 30 días corrijo cualquier error sin costo, y después puedes contratar mantenimiento si lo necesitas.</p></details>
       </div>
     </section>
 
     <section class="section contact" id="contacto">
-      <div class="contact-head reveal"><span class="kicker">07 / CONTACTO</span><h2>¿Tienes una <em>idea?</em></h2><p>Cuéntame qué quieres crear y transformemos tu idea en una experiencia digital.</p></div>
+      <div class="contact-head reveal"><span class="kicker">04 / CONTACTO</span><h2>¿Tienes una <em>idea?</em></h2><p>Cuéntame qué necesita tu negocio. Te respondo con una propuesta y un precio claro.</p></div>
       <div class="contact-layout">
         <form class="contact-form reveal" id="contactForm" novalidate>
-          <div class="field-row"><label>Nombre<input name="name" type="text" placeholder="Tu nombre" required></label><label>Correo electrónico<input name="email" type="email" placeholder="tu@email.com" required></label></div>
-          <div class="field-row"><label>Teléfono / WhatsApp<input name="phone" type="tel" placeholder="+593 ..."></label><label>Tipo de proyecto<select name="project" required><option value="">Selecciona una opción</option><option>Página web</option><option>Landing page</option><option>Tienda online</option><option>Automatización</option><option>Redes sociales</option><option>Experiencia 3D</option><option>Otro</option></select></label></div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+          <div class="field-row"><label>Nombre<input name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></label><label>Correo electrónico<input name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></label></div>
+          <div class="field-row"><label>Teléfono / WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="+593 ..."></label><label>Tipo de proyecto<select name="project" required><option value="">Selecciona una opción</option><option>Página web</option><option>Landing page</option><option>Tienda online</option><option>Automatización</option><option>Redes sociales</option><option>Experiencia 3D</option><option>Otro</option></select></label></div>
           <label>Presupuesto aproximado<select name="budget"><option value="">Selecciona una opción</option><option>Menos de $300</option><option>$300 – $600</option><option>$600 – $1,000</option><option>$1,000+</option><option>Por definir</option></select></label>
           <label>Cuéntame sobre tu proyecto<textarea name="message" rows="6" placeholder="¿Qué quieres crear? ¿Qué necesita tu negocio?" required></textarea></label>
           <button class="btn btn-primary submit-btn magnetic" type="submit"><span>Enviar proyecto</span><span>↗</span></button>
           <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
         <aside class="contact-card reveal">
-          <div class="contact-card-top"><span class="kicker">HABLEMOS</span><div class="mini-logo">HC</div></div>
+          <div class="contact-card-top"><span class="kicker">HABLEMOS</span><div class="mini-logo"><svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="HC"><g class="lg-ring lg-back"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 1 61 32" fill="none" stroke="#cfe9ff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></g></g><circle cx="32" cy="32" r="20" fill="url(#lgg)"/><path class="lg-h" pathLength="1" d="M25 23v18M39 23v18M25 32h14" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/><g class="lg-ring lg-front"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 0 61 32" fill="none" stroke="#e9f6ff" stroke-width="2.6" stroke-linecap="round"/><circle cx="61" cy="32" r="3.4" fill="#37d6ff"/></g></g></svg></div></div>
           <h3>HANSER<br><em>CASTRO</em></h3>
           <p>WEB • AUTOMATION • 3D</p>
           <div class="contact-links">
             <a href="mailto:hansercastro5@gmail.com">hansercastro5@gmail.com <span>↗</span></a>
             <a href="https://www.instagram.com/han.ser__hr/" target="_blank" rel="noopener noreferrer">@han.ser__hr <span>↗</span></a>
-            <a id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer">WhatsApp <span>↗</span></a>
           </div>
-          <small>El número de WhatsApp se configura en <b>config.js</b>.</small>
+          
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div><a class="brand" href="#inicio"><span class="brand-mark">HC</span><span class="brand-text">HANSER CASTRO<small>WEB • AUTOMATION • 3D</small></span></a></div>
+    <div><a class="brand" href="#inicio"><span class="brand-mark"><svg class="logo-svg" viewBox="0 0 64 64" role="img" aria-label="HC"><g class="lg-ring lg-back"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 1 61 32" fill="none" stroke="#cfe9ff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></g></g><circle cx="32" cy="32" r="20" fill="url(#lgg)"/><path class="lg-h" pathLength="1" d="M25 23v18M39 23v18M25 32h14" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/><g class="lg-ring lg-front"><g transform="rotate(-25 32 32)"><path d="M3 32A29 10 0 0 0 61 32" fill="none" stroke="#e9f6ff" stroke-width="2.6" stroke-linecap="round"/><circle cx="61" cy="32" r="3.4" fill="#37d6ff"/></g></g></svg></span><span class="brand-text">HANSER CASTRO<small>WEB • AUTOMATION • 3D</small></span></a></div>
     <div class="footer-links"><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#automatizaciones">Automatizaciones</a><a href="#contacto">Contacto</a></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Hanser Castro. Todos los derechos reservados.</span><span>HECHO PARA CRECER.</span></div>
   </footer>

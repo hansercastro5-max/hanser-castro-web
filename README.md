@@ -55,7 +55,7 @@ El enlace se generará automáticamente.
 
 Por defecto, el formulario valida los datos y abre el cliente de correo del visitante con el mensaje preparado.
 
-Para recibir formularios automáticamente sin depender del correo del visitante, conecta Formspree, Resend, Supabase o un backend propio en `script.js`.
+Para recibir formularios automáticamente, crea un formulario en Formspree y pega su URL en `formEndpoint` dentro de `config.js`. Si lo dejas vacío, se usa `mailto:`.
 
 No pongas claves secretas en el frontend.
 

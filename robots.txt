@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://hanser-castro-web.vercel.app/sitemap.xml
